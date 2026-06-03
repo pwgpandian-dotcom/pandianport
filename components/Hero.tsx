@@ -143,9 +143,17 @@ export default function Hero() {
               >
                 Contact Me <Mail size={15} />
               </button>
-              <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/[0.08] text-slate-400 font-medium text-sm hover:text-white hover:border-white/15 transition-all">
-                Resume <Download size={15} />
-              </button>
+              <a
+                href="/resume/Pandian_D_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Pandian_D_Resume.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/[0.08] text-slate-400 font-medium text-sm hover:text-white hover:border-white/15 transition-all group"
+              >
+                <span className="group-hover:hidden">Resume</span>
+                <span className="hidden group-hover:block">Download CV</span>
+                <Download size={15} />
+              </a>
             </motion.div>
 
             {/* Stats */}

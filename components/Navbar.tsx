@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X, Sparkles, Download } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', href: 'home' },
@@ -95,13 +95,18 @@ export default function Navbar() {
               </span>
               Available
             </div>
-            <button
-              onClick={() => scrollTo('contact')}
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white text-[#030712] text-sm font-semibold hover:bg-white/90 transition-all shadow-lg shadow-white/10"
+            <a
+              href="/resume/Pandian_D_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Pandian_D_Resume.pdf"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white text-[#030712] text-sm font-semibold hover:bg-white/90 transition-all shadow-lg shadow-white/10 group"
             >
-              <Sparkles size={13} />
-              Hire Me
-            </button>
+              <Sparkles size={13} className="group-hover:hidden" />
+              <Download size={13} className="hidden group-hover:block" />
+              <span className="group-hover:hidden">Hire Me</span>
+              <span className="hidden group-hover:block whitespace-nowrap">Download Resume</span>
+            </a>
             <button
               className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -136,12 +141,16 @@ export default function Navbar() {
                   {label}
                 </button>
               ))}
-              <button
-                onClick={() => scrollTo('contact')}
-                className="w-full mt-3 px-4 py-3 rounded-xl bg-white text-[#030712] text-sm font-bold"
+              <a
+                href="/resume/Pandian_D_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Pandian_D_Resume.pdf"
+                className="w-full mt-3 px-4 py-3 rounded-xl bg-white text-[#030712] text-sm font-bold flex items-center justify-center gap-2"
               >
-                Hire Me
-              </button>
+                <Download size={14} />
+                Hire Me / Download Resume
+              </a>
             </div>
           </motion.div>
         )}
